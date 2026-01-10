@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class PlayerStats
 {
-    private float moveSpeed;
+    private float moveSpeed = 100.0f;
     public float MoveSpeed
     {
-       get
-       {
+        get
+        {
             return moveSpeed;
-       }
-       set
-       {
+        }
+        set
+        {
             if (moveSpeed > 20)
             {
                 moveSpeed = 20;
@@ -19,7 +19,6 @@ public class PlayerStats
             {
                 moveSpeed = value;
             }
-            
-       }
+        }
     }
 }

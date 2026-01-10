@@ -3,17 +3,23 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    Rigidbody2D rBody;
-    public float speed = 5.0f;
     PlayerStats stats;
 
+    // Components
+    Rigidbody2D rBody;
+
+    // Private variables
     Vector2 moveInput;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Awake()
     {
         rBody = GetComponent<Rigidbody2D>();
 
-        
+
+
+
+
+
     }
 
     void OnMove(InputValue value)
@@ -24,12 +30,12 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         ApplyMovement();
-        PlayerStats stats = new PlayerStats();
-
+        stats = new PlayerStats();
         stats.MoveSpeed = 100;
+        Debug.Log(stats.MoveSpeed);
     }
 
-    void ApplyMovement()
+    private void ApplyMovement()
     {
         float targetVelocityX = moveInput.x;
 
