@@ -34,6 +34,7 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (context.started)
         {
+            print("yo");
             jumpTriggered = true;
         }
         else if (context.canceled)

@@ -51,6 +51,7 @@ public class Player : Character
         // Only jump if I'm on the ground and input.jumpTriggered is set to true
         if (input.JumpTriggered && isGrounded)
         {
+            print("trying to jump");
             // Apply the Jump Force
             ApplyJumpForce();
         }
