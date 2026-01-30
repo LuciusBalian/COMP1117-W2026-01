@@ -26,6 +26,16 @@ public class Player : Character
     {
         // Perform my ground check.
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+
+        // Set anim values
+        anim.SetBool("isGrounded", isGrounded);
+        anim.SetFloat("xVelocity", Mathf.Abs(rBody.linearVelocityX));
+        anim.SetFloat("yVelocity", rBody.linearVelocityY);
+
+        if (input.MoveInput.x != 0)
+        {
+            transform.localScale = new Vector3(Mathf.Sign(input.MoveInput.x), 1, 1);
+        }
     }
 
     private void FixedUpdate()  // Movement goes here (Move and jump)
